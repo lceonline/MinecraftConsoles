@@ -5,3 +5,5 @@
 /Minecraft.World/x64_Release
 /Minecraft.Client/x64/Release
 /x64/Release
+Minecraft.Client/Minecraft.Client.vcxproj.user
+Minecraft.Client\Windows64\GameHDD
