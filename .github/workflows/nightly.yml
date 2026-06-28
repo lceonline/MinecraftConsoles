@@ -5,7 +5,6 @@ on:
   push:
     branches:
     - 'main'
-    - 'feature/dedicated-server'
     paths-ignore:
       - '.gitignore'
       - '*.md'
