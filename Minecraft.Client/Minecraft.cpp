@@ -3304,7 +3304,7 @@ void Minecraft::tick(bool bFirst, bool bUpdateTextures)
 
 		if (player->missTime > 0) player->missTime--;
 
-#ifdef _DEBUG_MENUS_ENABLED
+#ifdef _DEBUG
 		if(app.DebugSettingsOn())
 		{
 #ifndef __PSVITA__

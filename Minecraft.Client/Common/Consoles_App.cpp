@@ -138,7 +138,7 @@ CMinecraftApp::CMinecraftApp()
 	m_bChangingSessionType = false;
 	m_bReallyChangingSessionType = false;
 
-#ifdef _DEBUG_MENUS_ENABLED
+#ifdef _DEBUG
 
 #ifdef _CONTENT_PACKAGE
 	m_bDebugOptions=false; // make them off by default in a content package build
@@ -2213,10 +2213,10 @@ void CMinecraftApp::ClearGameSettingsChangedFlag(int iPad)
 
 ///////////////////////////
 //
-// Remove the debug settings in the content package build
+// Remove the debug settings in the release build
 //
 ////////////////////////////
-#ifndef _DEBUG_MENUS_ENABLED
+#ifdef _DEBUG
 unsigned int CMinecraftApp::GetGameSettingsDebugMask(int iPad,bool bOverridePlayer) //bOverridePlayer is to force the send for the server to get the read options
 {
 	return 0;

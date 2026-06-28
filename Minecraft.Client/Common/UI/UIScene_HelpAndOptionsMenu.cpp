@@ -25,7 +25,7 @@ UIScene_HelpAndOptionsMenu::UIScene_HelpAndOptionsMenu(int iPad, void *initData,
 
 	doHorizontalResizeCheck();
 
-#ifdef _FINAL_BUILD
+#ifndef _DEBUG
 	removeControl( &m_buttons[BUTTON_HAO_DEBUG], false);
 #else
 	if(!app.DebugSettingsOn()) removeControl( &m_buttons[BUTTON_HAO_DEBUG], false);
@@ -120,7 +120,7 @@ void UIScene_HelpAndOptionsMenu::updateComponents()
 
 void UIScene_HelpAndOptionsMenu::handleReload()
 {
-#ifdef _FINAL_BUILD
+#ifndef _DEBUG
 	removeControl( &m_buttons[BUTTON_HAO_DEBUG], false);
 #else
 	if(!app.DebugSettingsOn()) removeControl( &m_buttons[BUTTON_HAO_DEBUG], false);
