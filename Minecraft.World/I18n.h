@@ -7,9 +7,10 @@ using namespace std;
 class I18n
 {
 private:
-	static Language *lang;
+	static Language* lang;
 
 public:
-    static wstring get(const wstring& id, ...);
+	static wstring get(const wstring* id, ...);
+	static wstring I18n::get(const wstring& id);
 	static wstring get(const wstring& id, va_list args);
 };

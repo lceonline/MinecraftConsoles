@@ -20,14 +20,14 @@ wstring Language::getElement(const wstring& elementId)
 	return elementId;
 } */
 
-wstring Language::getElement(const wstring& elementId, ...)
+wstring Language::getElement(const wstring* elementId, ...)
 {
 #ifdef __PSVITA__		// 4J - vita doesn't like having a reference type as the last parameter passed to va_start - we shouldn't need this method anyway
 	return L"";
 #else
 	va_list args;
 	va_start(args, elementId);
-	return getElement(elementId, args);
+	return getElement(*elementId, args);
 #endif
 }
 
@@ -35,6 +35,11 @@ wstring Language::getElement(const wstring& elementId, va_list args)
 {
 	// 4J TODO
 	return elementId;
+}
+
+wstring Language::getElement(const wstring& elementId)
+{
+	return getElement(&elementId);
 }
 
 wstring Language::getElementName(const wstring& elementId)

@@ -194,7 +194,7 @@ wstring Options::getKeyMessage(int i)
 {
 	int key = keyMappings[i]->key;
 	if (key < 0) {
-		return I18n::get(L"key.mouseButton", key + 101);
+		return I18n::get(&std::wstring(L"key.mouseButton"), key + 101);
 	} else {
 		return Keyboard::getKeyName(keyMappings[i]->key);
 	}
